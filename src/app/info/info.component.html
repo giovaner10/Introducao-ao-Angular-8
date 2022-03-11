@@ -1,0 +1,47 @@
+<h2>infos</h2>
+
+<form #courseForm *ngIf="course">
+    <div class="form-group row">
+        <label for="inp" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">            
+            <input ngClass=""  [(ngModel)]="course.name" type="text" class="form-control" id="inp" name="name" #courseName="ngModel" [ngClass]="{'is-invalid': courseName.invalid}" required>       
+            <div class="invalid-feedback">
+                <span>Course name is required</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="inp" class="col-sm-2 col-form-label">Price</label>
+        <div class="col-sm-10">            
+            <input ngClass=""  [(ngModel)]="course.price" type="number" class="form-control" id="inp" name="price" #coursePrice="ngModel" [ngClass]="{'is-invalid': coursePrice.invalid}" required>       
+            <div class="invalid-feedback">
+                <span>Course Price is required</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="inp" class="col-sm-2 col-form-label">Rating</label>
+        <div class="col-sm-10">            
+            <input ngClass=""  [(ngModel)]="course.rating" type="text" class="form-control" id="inp" name="rating" #courseRating="ngModel" [ngClass]="{'is-invalid': courseRating.invalid}" required>       
+            <div class="invalid-feedback">
+                <span>Course Rating is required</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="inp" class="col-sm-2 col-form-label">Describe</label>
+        <div class="col-sm-10">            
+            <input ngClass=""  [(ngModel)]="course.description" type="text" class="form-control" id="inp" name="description" #courseDescription="ngModel" [ngClass]="{'is-invalid': courseDescription.invalid}" required>       
+            <div class="invalid-feedback">
+                <span>Course Describe is required</span>
+            </div>
+        </div>
+    </div>
+
+    <button (click)="save()"  class="btn btn-primary mr-2" >Save</button>
+    <button [routerLink]="['/courses']" class="btn btn-secundary">Back</button>
+
+</form>
